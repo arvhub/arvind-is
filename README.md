@@ -14,7 +14,7 @@ npm install
 
 ### Development
 
-Start the development server with HMR:
+For local development, run:
 
 ```bash
 npm run dev
@@ -24,7 +24,7 @@ The app will be available at `http://localhost:5173`.
 
 ## Building for Production
 
-Create a production build:
+To build the app for production, run:
 
 ```bash
 npm run build
@@ -32,18 +32,30 @@ npm run build
 
 ## Deployment
 
-### Docker Deployment
+### AWS Amplify
 
-- `Dockerfile` - for npm
+You can deploy this app in AWS Amplify with the following amplify.yaml configuration file:
 
-To build and run using Docker:
-
-```bash
-# For npm
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+```yaml
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci --cache .npm --prefer-offline
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+frontend:
+  phases:
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: ./build/client
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .npm/**/*
 ```
 
 ---
