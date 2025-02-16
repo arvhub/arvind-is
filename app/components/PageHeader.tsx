@@ -1,6 +1,7 @@
-import { BiLogoGithub, BiSearch } from "react-icons/bi";
+import { BiLogoGithub } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { SearchBar } from "./SearchBar";
 
 export function PageHeader() {
   const navigate = useNavigate();
@@ -34,40 +35,40 @@ export function PageHeader() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const input = e.currentTarget.querySelector('input');
-    if (input && input.value && placeholderOptions.includes(input.value.toLowerCase())) {
-      navigate(`/${input.value.toLowerCase()}`);
+  const handleSearch = (value: string) => {
+    if (placeholderOptions.includes(value.toLowerCase())) {
+      navigate(`/${value.toLowerCase()}`);
     }
   };
 
   return (
-    <>
-      <div className="fixed top-4 left-4 flex items-center gap-2">
-        <p 
-          onClick={() => navigate('/')} 
-          className="text-2xl font-bold cursor-pointer hover:text-gray-600 transition-colors"
+    <div className="fixed top-0 left-0 right-0 h-16">
+      <div className="flex justify-between items-start p-4">
+        <div className="flex items-start gap-2">
+          <p 
+            onClick={() => navigate('/')} 
+            className="text-2xl font-bold cursor-pointer hover:text-gray-600 transition-colors"
+          >
+            Arvind is...
+          </p>
+          <div className="relative">
+            <SearchBar
+              placeholder={placeholder}
+              placeholderOpacity={opacity}
+              options={placeholderOptions}
+              onSearch={handleSearch}
+            />
+          </div>
+        </div>
+        <a 
+          href="https://github.com/arvhub/arvind-is" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="mt-1"
         >
-          Arvind is...
-        </p>
-        <form onSubmit={handleSearch} className="relative">
-          <input 
-            type="text" 
-            placeholder={placeholder}
-            className="pr-8 pl-4 py-1 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-400 placeholder:transition-opacity placeholder:duration-500"
-            style={{ "--placeholder-opacity": opacity } as any}
-          />
-          <button type="submit">
-            <BiSearch className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-          </button>
-        </form>
-      </div>
-      <div className="fixed top-4 right-4">
-        <a href="https://github.com/arvhub/arvind-is" target="_blank" rel="noopener noreferrer">
-          <BiLogoGithub className="w-10 h-10" />
+          <BiLogoGithub className="w-8 h-8" />
         </a>
       </div>
-    </>
+    </div>
   );
 } 
