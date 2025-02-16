@@ -1,8 +1,13 @@
-export default function Coding() {
+import { PageHeader } from "../components/PageHeader";
+
+export default function CodingPage() {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <h1 className="text-2xl font-bold">Coding</h1>
-      <p>My coding journey and projects...</p>
-    </div>
+    <main className="flex flex-col items-center pt-16 pb-4">
+      <PageHeader />
+      <div className="flex flex-col items-center gap-4">
+        <h1 className="text-2xl font-bold">Coding</h1>
+        <p>My coding journey and projects...</p>
+      </div>
+    </main>
   );
-} 
+}
