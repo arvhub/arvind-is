@@ -13,3 +13,16 @@ body {
     color-scheme: dark;
   }
 }
+
+@keyframes fadeTransition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+input::placeholder {
+  opacity: var(--placeholder-opacity);
+}

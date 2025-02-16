@@ -1,6 +1,6 @@
 # Arvind is...
 
-building a website for all things Arvind. Come visit [arvind.is](https://arvind.is) to see what I'm up to!
+building a website for all things Arvind. Come visit [arvind.is](https://main.d7dozwdu8yrto.amplifyapp.com/) to see what I'm up to!
 
 ## Getting Started
 
