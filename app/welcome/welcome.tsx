@@ -1,8 +1,10 @@
 import headshot from "./headshot.jpeg";
 import { BiLogoGithub, BiSearch } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export function Welcome() {
+  const navigate = useNavigate();
   const placeholderOptions = [
     "home",
     "watching",
@@ -37,19 +39,29 @@ export function Welcome() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const input = e.currentTarget.querySelector('input');
+    if (input && input.value && placeholderOptions.includes(input.value.toLowerCase())) {
+      navigate(`/${input.value.toLowerCase()}`);
+    }
+  };
+
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="fixed top-4 left-4 flex items-center gap-2">
         <p className="text-2xl font-bold">Arvind is...</p>
-        <div className="relative">
+        <form onSubmit={handleSearch} className="relative">
           <input 
             type="text" 
             placeholder={placeholder}
             className="pr-8 pl-4 py-1 rounded-lg border border-gray-300 focus:outline-none focus:border-gray-400 placeholder:transition-opacity placeholder:duration-500"
             style={{ "--placeholder-opacity": opacity } as any}
           />
-          <BiSearch className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-        </div>
+          <button type="submit">
+            <BiSearch className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          </button>
+        </form>
       </div>
       <div className="fixed top-4 right-4">
           <a href="https://github.com/arvhub/arvind-is" target="_blank" rel="noopener noreferrer">
