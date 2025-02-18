@@ -14,7 +14,7 @@ const images = [
 
 export default function WatchingPage() {
   return (
-    <main className="flex flex-col items-center pt-16 pb-4">
+    <main className="flex flex-col items-center pt-24 pb-4">
       <PageHeader />
       <div className="flex flex-col items-center gap-4 w-full max-w-2xl px-4">
         <div className="w-full max-w-[400px] rounded-lg overflow-hidden">

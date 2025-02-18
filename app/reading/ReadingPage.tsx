@@ -3,7 +3,7 @@ import { PageHeader } from "../components/PageHeader";
 
 export default function ReadingPage() {
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
+    <main className="flex items-center justify-center pt-24 pb-4">
       <PageHeader />
       <div className="flex-1 flex flex-col items-center gap-4 min-h-0">
         <header className="flex flex-col items-center gap-9">
