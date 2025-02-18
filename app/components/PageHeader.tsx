@@ -42,7 +42,7 @@ export function PageHeader() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-16 md:h-auto">
+    <div className="fixed top-0 left-0 right-0 h-16 md:h-auto bg-white dark:bg-gray-950" style={{ zIndex: 50 }}>
       <div className="flex justify-between items-start p-4 md:items-center md:flex-row">
         <div className="flex items-start gap-2">
           <p 
@@ -71,4 +71,4 @@ export function PageHeader() {
       </div>
     </div>
   );
-} 
+}
