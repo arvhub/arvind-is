@@ -114,7 +114,7 @@ export function SearchBar({ placeholder, placeholderOpacity, options, onSearch }
     <div className="relative">
       <div 
         ref={dropdownRef}
-        className={`border border-gray-300 rounded-lg ${showDropdown && filteredOptions.length > 0 ? 'border-gray-400' : ''}`}
+        className={`border border-gray-300 rounded-lg overflow-hidden ${showDropdown && filteredOptions.length > 0 ? 'border-gray-400' : ''}`}
       >
         <form onSubmit={handleSubmit}>
           <input
@@ -125,7 +125,7 @@ export function SearchBar({ placeholder, placeholderOpacity, options, onSearch }
             onKeyDown={handleKeyDown}
             onFocus={() => updateFilteredOptions(inputValue)}
             placeholder={placeholder}
-            className="w-full pr-8 pl-4 py-1 rounded-lg focus:outline-none placeholder:transition-opacity placeholder:duration-500"
+            className="w-48 md:w-64 pr-8 pl-4 py-1 rounded-lg focus:outline-none placeholder:transition-opacity placeholder:duration-500"
             style={{ "--placeholder-opacity": placeholderOpacity } as any}
           />
           <button type="submit">
@@ -134,7 +134,7 @@ export function SearchBar({ placeholder, placeholderOpacity, options, onSearch }
         </form>
         
         {showDropdown && filteredOptions.length > 0 && (
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-white dark:bg-gray-950">
             {filteredOptions.map((option, index) => (
               <div
                 key={option}

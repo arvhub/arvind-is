@@ -42,8 +42,8 @@ export function PageHeader() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-16">
-      <div className="flex justify-between items-start p-4">
+    <div className="fixed top-0 left-0 right-0 h-16 md:h-auto">
+      <div className="flex justify-between items-start p-4 md:items-center md:flex-row">
         <div className="flex items-start gap-2">
           <p 
             onClick={() => navigate('/')} 
@@ -51,7 +51,7 @@ export function PageHeader() {
           >
             Arvind is...
           </p>
-          <div className="relative">
+          <div className="relative h-[40px]">
             <SearchBar
               placeholder={placeholder}
               placeholderOpacity={opacity}
