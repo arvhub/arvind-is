@@ -2,6 +2,7 @@ import { BiLogoGithub } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { SearchBar } from "./SearchBar";
+import { shuffleArray } from "../util/helpers";
 
 export function PageHeader() {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ export function PageHeader() {
     "on Spotify",
   ];
   const lowerPlaceholderOptions = placeholderOptions.map(placeholder => placeholder.toLowerCase());
-  const [placeholder, setPlaceholder] = useState(placeholderOptions[0]);
+  const shuffledPlaceholderOptions = shuffleArray(placeholderOptions);
+  const [placeholder, setPlaceholder] = useState(shuffledPlaceholderOptions[0]);
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export function PageHeader() {
 
       setTimeout(() => {
         setPlaceholder((current) => {
-          const currentIndex = placeholderOptions.indexOf(current);
+          const currentIndex = shuffledPlaceholderOptions.indexOf(current);
           const nextIndex = (currentIndex + 1) % placeholderOptions.length;
           return placeholderOptions[nextIndex];
         });
