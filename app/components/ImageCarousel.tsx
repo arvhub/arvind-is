@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
 interface ImageCarouselProps {
   images: string[];
@@ -36,7 +36,7 @@ export function ImageCarousel({ images, interval = 5000 }: ImageCarouselProps) {
         <div
           key={src}
           className={`absolute w-full h-full transition-opacity duration-500 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
@@ -53,8 +53,8 @@ export function ImageCarousel({ images, interval = 5000 }: ImageCarouselProps) {
             onClick={() => handleDotClick(index)}
             className={`w-2 h-2 rounded-full transition-all ${
               index === currentIndex
-                ? 'bg-white scale-125'
-                : 'bg-white/50 hover:bg-white/75'
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/75"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -62,4 +62,4 @@ export function ImageCarousel({ images, interval = 5000 }: ImageCarouselProps) {
       </div>
     </div>
   );
-} 
+}

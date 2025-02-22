@@ -28,7 +28,7 @@
 }
 
 .terminal-line::before {
-  content: '> ';
+  content: "> ";
   color: #00ff00;
 }
 

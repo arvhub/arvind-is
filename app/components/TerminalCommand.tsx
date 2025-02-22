@@ -35,4 +35,4 @@ export function TerminalCommand({ commands }: TerminalCommandProps) {
       ))}
     </div>
   );
-} 
+}

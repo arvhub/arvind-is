@@ -17,7 +17,9 @@ export default function ReadingPage() {
         </header>
         <div className="flex justify-center max-w-[400px] w-full px-4">
           <div className="flex flex-row items-center gap-2">
-            <p className="text-center text-2xl"><b>Arvind is</b> continuing to binge Vonnegut novels 📚</p>
+            <p className="text-center text-2xl">
+              <b>Arvind is</b> continuing to binge Vonnegut novels 📚
+            </p>
           </div>
         </div>
       </div>

@@ -5,12 +5,7 @@ import theBear from "./theBear.png";
 import couplesTherapy from "./couplesTherapy.jpg";
 import amazingRace from "./amazingRace.png";
 
-const images = [
-  severance,
-  theBear,
-  couplesTherapy,
-  amazingRace,
-];
+const images = [severance, theBear, couplesTherapy, amazingRace];
 
 export default function WatchingPage() {
   return (
@@ -26,8 +21,12 @@ export default function WatchingPage() {
         </div>
         <div className="flex justify-center max-w-[400px] w-full px-4">
           <div className="flex flex-row items-center gap-2">
-            <p className="text-center text-2xl font-bold whitespace-nowrap">Arvind is </p>
-            <p className="text-center text-2xl whitespace-nowrap">watching some shows.</p>
+            <p className="text-center text-2xl font-bold whitespace-nowrap">
+              Arvind is{" "}
+            </p>
+            <p className="text-center text-2xl whitespace-nowrap">
+              watching some shows.
+            </p>
           </div>
         </div>
         <div className="flex flex-row items-center gap-2">

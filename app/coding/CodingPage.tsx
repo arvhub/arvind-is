@@ -8,7 +8,7 @@ export default function CodingPage() {
     "gh repo clone arvhub/arvind-is",
     "cd arvind-is",
     "npm install",
-    "npm run dev"
+    "npm run dev",
   ];
 
   return (
@@ -28,9 +28,7 @@ export default function CodingPage() {
             Follow @arvhub/arvind-is
           </GitHubButton>
         </div>
-        <p className="text-center text-2xl">
-          Try it yourself locally:
-        </p>
+        <p className="text-center text-2xl">Try it yourself locally:</p>
         <TerminalCommand commands={commands} />
       </div>
     </main>
