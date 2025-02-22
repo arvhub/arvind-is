@@ -1,11 +1,14 @@
-// Fisher-Yates shuffle algorithm
+// Fisher-Yates shuffle algorithm without mutating the input array
 export function shuffleArray<T>(array: T[]): T[] {
-    for (let i = array.length - 1; i > 0; i--) {
+    const shuffledArray = [...array]; // Create a copy of the array
+
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
         // Generate a random index from 0 to i
         const j = Math.floor(Math.random() * (i + 1));
 
         // Swap elements at index i and j
-        [array[i], array[j]] = [array[j], array[i]];
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
     }
-    return array;
+
+    return shuffledArray; // Return the shuffled copy
 }
