@@ -1,4 +1,4 @@
-import headshot from "./headshot.jpeg";
+import headshot from "./headshot.jpg";
 import { PageHeader } from "./components/PageHeader";
 
 export default function WelcomePage() {
