@@ -12,6 +12,7 @@ export function PageHeader() {
     "coding",
     "reading",
     "learning",
+    "on github",
   ];
   const [placeholder, setPlaceholder] = useState(placeholderOptions[0]);
   const [opacity, setOpacity] = useState(0);
@@ -37,7 +38,7 @@ export function PageHeader() {
 
   const handleSearch = (value: string) => {
     if (placeholderOptions.includes(value.toLowerCase())) {
-      navigate(`/${value.toLowerCase()}`);
+      navigate(`/${value.toLowerCase().replace(/ /g, '/')}`);
     }
   };
 
