@@ -11,5 +11,9 @@ export default [
   ...prefix("on", [
     index("on/OnDashboardPage.tsx"),
     route("github", "on/GithubPage.tsx"),
+    route("instagram", "on/InstagramPage.tsx"),
+    route("facebook", "on/FacebookPage.tsx"),
+    route("linkedin", "on/LinkedInPage.tsx"),
+    route("spotify", "on/SpotifyPage.tsx"),
   ]),
 ] satisfies RouteConfig;

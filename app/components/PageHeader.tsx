@@ -12,8 +12,13 @@ export function PageHeader() {
     "coding",
     "reading",
     "learning",
-    "on github",
+    "on Github",
+    "on Instagram",
+    "on LinkedIn",
+    "on Facebook",
+    "on Spotify",
   ];
+  const lowerPlaceholderOptions = placeholderOptions.map(placeholder => placeholder.toLowerCase());
   const [placeholder, setPlaceholder] = useState(placeholderOptions[0]);
   const [opacity, setOpacity] = useState(0);
 
@@ -37,7 +42,7 @@ export function PageHeader() {
   }, []);
 
   const handleSearch = (value: string) => {
-    if (placeholderOptions.includes(value.toLowerCase())) {
+    if (lowerPlaceholderOptions.includes(value.toLowerCase())) {
       navigate(`/${value.toLowerCase().replace(/ /g, '/')}`);
     }
   };
