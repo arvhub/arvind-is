@@ -7,7 +7,6 @@ export default [
   route("traveling", "traveling/TravelingPage.tsx"),
   route("coding", "coding/CodingPage.tsx"),
   route("reading", "reading/ReadingPage.tsx"),
-  route("learning", "learning/LearningPage.tsx"),
   ...prefix("on", [
     index("on/OnDashboardPage.tsx"),
     route("github", "on/GithubPage.tsx"),

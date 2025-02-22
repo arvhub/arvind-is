@@ -12,7 +12,6 @@ export function PageHeader() {
     "traveling",
     "coding",
     "reading",
-    "learning",
     "on Github",
     "on Instagram",
     "on LinkedIn",
