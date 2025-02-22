@@ -1,3 +1,37 @@
+.terminal-command {
+  position: relative;
+}
+
+.copy-clipboard-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.copy-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.terminal-command {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #282a36;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-family: monospace;
+  color: #4af626;
+}
+
+.terminal-line::before {
+  content: '> ';
+  color: #00ff00;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -18,6 +52,7 @@ body {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
